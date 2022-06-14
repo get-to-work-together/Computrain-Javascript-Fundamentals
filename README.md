@@ -1,1 +1,1 @@
-# javascript_fundamentals
+# Computrain - Javascript Fundamentals
