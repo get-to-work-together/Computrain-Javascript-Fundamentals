@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>Bewerkingsvolgorde</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var leeftijd = parseInt( window.prompt("Hoe oud ben je? ") );
+		
+		var bKind = leeftijd >= 3 && leeftijd <= 12;
+		var bOudere = leeftijd > 65;
+		
+		if ( bOudere || bKind ) {
+			if ( bOudere ) {
+				document.write("Kortingskaart AOW");
+			}
+			else {
+				document.write("Kortingskaart Kind");
+			}
+		}
+		else {
+			document.write("Normaal tarief");
+			document.write("OK???");			
+		}
+		document.write("Achteraf");			
+
+
+	</script>
+
+</body>
+</html>

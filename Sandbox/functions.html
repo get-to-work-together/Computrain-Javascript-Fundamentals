@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Exercise 3</title>
+
+  <script type="text/javascript">
+
+  function printIets(voornaam, achternaam) {
+	var naam = "";
+	if ( !(voornaam == null || voornaam == "" )) {
+		naam += voornaam;
+	}
+	if (achternaam != null) {
+		naam += " " +achternaam;
+	}
+	
+	if (naam != "") {
+		document.write("###############<br>");
+		document.write("#### " + naam + " ####<br>");
+		document.write("###############<br>");
+	}
+  }
+  
+  function btw(prijs) {
+	uitkomst = prijs * 0.19;
+	return uitkomst;
+  }
+        
+  </script>
+
+  </head>
+<body>
+  <h2>Function</h2>
+
+ <script>
+ printIets("Peter", "Anema");
+ printIets("","Achternaam");
+ printIets("Kitty");
+ printIets();
+ 
+ for (var i = 10; i <= 100; i+=10) {
+	 document.write("BTW van " + i + " is " + btw(i) + "<br>");
+ }
+ 
+ </script>
+ 
+</html>

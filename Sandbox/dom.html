@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Exercise 5</title>
+  <style>
+	h1 {
+		border: 2px solid gray;
+		background-color: darkgray;
+		color: white;
+		height: 180px;
+		padding: 50px;
+	}
+	.blokje {
+		display: inline-block;
+		margin:0;
+		border:1px solid darkgray;
+		background-color: gray;
+		height: 50px;
+		width: 50px;
+	}
+	.roodachtig {
+		color: red;
+		background-color: pink;
+	}
+  </style>
+  <script type="text/javascript">
+	function veranderHeader() {
+		var e = document.getElementById("header");
+		e.className += " roodachtig";
+	}
+	function addClass(e, cls) {
+//		e.className += " " + cls;
+		e.classList.add(cls);
+	}
+	function removeClass(e, cls) {
+//		e.className = e.className.replace(" " + cls, "");
+		e.classList.remove(cls);
+	}
+  </script>
+</head>
+<body>
+	<h1 id="header">Dit is mijn header</h1>
+	<button onclick="veranderHeader()">Klik hier</button>
+	
+	<div class="blokje" onmouseover="addClass(this, 'roodachtig')" 
+	                    onmouseout="removeClass(this, 'roodachtig')">1</div>
+	<div class="blokje" onmouseover="addClass(this, 'roodachtig')" 
+	                    onmouseout="removeClass(this, 'roodachtig')">2</div>
+	<div class="blokje" onmouseover="addClass(this, 'roodachtig')" 
+	                    onmouseout="removeClass(this, 'roodachtig')">3</div>
+	
+</body>
+</html>
