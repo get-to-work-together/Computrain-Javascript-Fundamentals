@@ -4,14 +4,14 @@
   <script type="text/javascript">
     function sayHello(name)
     {
-      if (name == null) {
+      if (!name) {
         name = "stranger";
       }
       alert("Hello " + name);
     }
     function cube(number)
     {
-      return number * number * number;
+      return number ** 3;
     }
     function readMark(min, max)
     {
@@ -27,7 +27,8 @@
       }
       return mark;
     }
-    sayHello("Mary");
+
+    sayHello("Mary", 10);
     sayHello();
     alert(cube(10));  // should be 1000
     alert(readMark(1, 100));

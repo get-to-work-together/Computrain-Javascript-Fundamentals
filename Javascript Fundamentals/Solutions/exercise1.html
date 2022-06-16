@@ -2,9 +2,38 @@
 <head>
   <title>Exercise 1</title>
   <script type="text/javascript">
+    function func_doe_iets() {
+      let beroep = '';
+      const vraag = 'Wat is jouw beroep?';
+      var invoer = window.prompt(vraag);
+      var yesno = window.confirm('Vanuit confirm: ' + invoer);
+      window.alert(beroep);
+      console.log('Screen width = ' + window.screen.width );
+
+      if (beroep === null) alert('beroep is null')
+      if (typeof beroep === 'undefined' ) alert('beroep is undefined')
+      if (beroep === '' ) alert('beroep is empty')
+      if (!beroep) alert('beroep is false')
+
+    }
     alert("Good\nafternoon!");
+    func_doe_iets()
+
+    var n = 1;
+    n = n + 10;
+    n += 10;
+    n++;
+
+    var a = 2
+    var b = 3
+    var c = parseInt(a) + b
+    var d = a.toString() + b.toString();
+    var d = String(a) + String(b);
+    console.log(d)
+
     document.write("This line was written from the head section<br>");
     document.write(navigator.appName + " - " + navigator.appVersion);    
+    console.log("Bericht van mij!!!");
   </script>
 </head>
 
@@ -15,11 +44,12 @@
 
     // This script was written bij someone on somedate
 
-    document.write ("This is the first script");
+    document.write("This is the first script");
     document.write("<br>");
     document.write("My name is John<br>" );
     document.write("I live in New York<br>");
   </script>
-  This is the last line of the page
+  This is the last        
+  line of the page
 </body>
 </html>

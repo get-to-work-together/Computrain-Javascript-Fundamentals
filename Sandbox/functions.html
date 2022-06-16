@@ -20,8 +20,8 @@
 	}
   }
   
-  function btw(prijs) {
-	uitkomst = prijs * 0.19;
+  function btw(prijs, btwPercentage = 0.19) {
+	uitkomst = prijs * btwPercentage;
 	return uitkomst;
   }
         

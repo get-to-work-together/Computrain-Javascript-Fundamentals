@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<title>Table</title>
+    <style>
+        * {
+            font-size: 18pt;
+        }
+        input[type = button] {
+            padding: 0.1em 0.6em;
+            background-color:lightpink;
+            border-radius: 6px;
+        }
+        table {
+            margin-bottom: 30px;
+            border-collapse: collapse;
+        }
+        div {
+            margin-bottom: 20px;
+        }
+        td {
+            border: 1px solid darkgrey;
+            font-size: 20pt;
+            padding: 0.6em;
+            text-align: center;
+        }
+        .highlight {
+            color: white;
+            background-color: hotpink;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+            crossorigin="anonymous"></script>
+	<script type="text/javascript">
+
+function buildTable(nRows, nCols) {
+    s = '<table>';
+    for (let iRow = 0; iRow <= nRows - 1; iRow++) {
+        s += '<tr>';
+        for (let iCol = 0; iCol <= nCols - 1; iCol++) {
+            number = iRow * nCols + iCol + 1;
+            s += '<td>' + number + '</td>';
+        }
+        s += '</tr>';
+    }
+    s += '</table>';
+    return s
+}
+
+function highlight(number) {
+    console.log(number);
+    // $('td').toggleClass('highlight');
+    $('table tr td:nth-child(' + number + ')').toggleClass('highlight');
+}
+function getTotal() {
+    var total = 0;
+    $('td.highlight').each(function() {
+        total += Number($(this).text());
+    });
+    $('#total').text(total);
+}
+function clearHighlight() {
+    $('td.highlight').removeClass('highlight');
+}
+
+$(document).ready(function(){
+    $('td').click(function(){ 
+        $(this).toggleClass('highlight');
+    });
+});
+
+	</script>
+</head>
+<body>
+    <script>
+        document.write(buildTable(4, 5));
+    </script>
+    <div>
+        <input type="button" value="1" onclick="highlight(1)">
+        <input type="button" value="2" onclick="highlight(2)">
+        <input type="button" value="3" onclick="highlight(3)">
+        <input type="button" value="4" onclick="highlight(4)">
+        <input type="button" value="5" onclick="highlight(5)">
+        <input type="button" value="Clear" onclick="clearHighlight()">
+    </div>
+    <div>
+        <input type="button" value="Get Total" onclick="getTotal()">
+        <label>Total: <span id="total">...</span></label>
+    </div>
+</body>
+</html>
