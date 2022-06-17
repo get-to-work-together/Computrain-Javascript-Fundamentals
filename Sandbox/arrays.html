@@ -3,22 +3,55 @@
   <title>Exercise 5</title>
   <script type="text/javascript">
 
-	var a = new Array(10);
+	var a = new Array();
 	a[0]="0";
-//	a[10]="4";
+	a[5]="xxxxx";
+	a[2]="xxxxx";
 	
 	var b = [3,2,6,3,7,8,"x","y"];
-	
+
+	var tekst = 'dit is een lange zin met heel veel woorden'
+	var woorden = tekst.split(' ')
+	woorden.sort()
+	woorden.sort((w1, w2) => w1.split('e').length - w2.split('e').length)
+
+	woorden = woorden.map(w => w.toUpperCase())
+
+	woorden = woorden.filter(w => w.length > 2)
+
+	woorden.push('the','end')
+	woorden.pop()
+	woorden.splice(0, 0, 'the', 'beginning')
+	woorden.splice(7, 1)
+	// woorden.splice(woorden.indexOf('HEEL'), 1)
+
+	woorden = woorden.filter(w => (!w.endsWith('EEL')))
+
   </script>
 </head>
 <body>
 	<script>
-		for (var i = 0; i < a.length; i++) {
+		for (let i = 0; i < a.length; ++i) {
 			document.write(a[i] + "<br>");
 		}
-		for (var i = 0; i < b.length; i++) {
+
+		for (let item of a) {
+			if (item)
+				document.write(item + "<br>");
+		}
+
+		for (let i = 0; i < b.length; i++) {
 			document.write(b[i] + "<br>");
 		}
-	</script>
+
+		for (let item of b) {
+			document.write(item + "<br>");
+		}
+
+		for (let item of b.slice().sort()) {
+			document.write(item + "<br>");
+		}
+
+</script>
 </body>
 </html>

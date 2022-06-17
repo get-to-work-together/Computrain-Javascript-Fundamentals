@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>Custom Events</title>
+	<script type="text/javascript">
+
+/*
+ * From:
+ * https://blog.logrocket.com/custom-events-in-javascript-a-complete-guide/
+ * https://www.javascripttutorial.net/javascript-dom/javascript-custom-events/
+ * https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+ * 
+ */
+
+const myEvent = new CustomEvent("myEvent", {
+  detail: {'message':'This is a custom event'},
+  bubbles: true,
+  cancelable: true,
+  composed: false,
+});
+
+
+function loaded() {
+    document.querySelector("#target").dispatchEvent(myEvent);
+
+    document.querySelector("#target").addEventListener("myEvent", (event) => {
+        console.log("I'm listening on a custom event");
+    });
+}
+
+	</script>
+</head>
+<body onload="loaded()">
+    <div id="#target">A div with a custom event!</div>
+</body>
+</html>

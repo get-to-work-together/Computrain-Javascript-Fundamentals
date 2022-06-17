@@ -4,29 +4,32 @@
   <script type="text/javascript">
     function start()
     {
-      document.getElementById("div1").style.fontWeight = "bold";
-      document.getElementById("div2").style.color = "blue";
-      document.getElementById("div3").style.marginLeft = "10%";
-      document.getElementById("div4").innerHTML = "<i>This is a dynamic line of text</i>";
-      var divs = document.getElementsByTagName("div")
+      document.getElementById('div1').style.fontWeight = 'bold';
+      document.getElementById('div2').style.color = 'blue';
+      document.getElementById('div3').style.marginLeft = '10%';
+      document.getElementById('div4').innerHTML = 'This is a dynamic line of text';
+      document.getElementById('div4').style.fontStyle = 'italic';
+      var divs = document.getElementsByTagName('div')
 
-      for (var i = 0; i < divs.length;i++ ) {
-        divs[i].style.backgroundColor = "gold";
+      for (var i = 0; i < divs.length; i++ ) {
+        divs[i].style.backgroundColor = 'gold';
       }
-      document.getElementById("div2").style.display = "none";
+
+      let d2 = document.getElementById('div2');
+      d2.style.display = 'none';
+      // d2.style.visibility = 'hidden'
 
       var d5 = document.getElementById('div5');
       for (var i = 1; i <= 3; i++) {
         var p = document.createElement('p');
-        p.innerHTML = "This is paragraph number " +i;
+        p.innerHTML = 'This is paragraph number ' +i;
         d5.appendChild(p);
       }
     }
   </script>
 </head>
 <body onload="start()">
-  <h2>
-    Exercise 8</h2>
+  <h2>Exercise 8</h2>
   <div id="div1">
     This is a first bit of text
   </div>

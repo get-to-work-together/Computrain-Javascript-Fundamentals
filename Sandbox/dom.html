@@ -2,51 +2,71 @@
 <head>
   <title>Exercise 5</title>
   <style>
-	h1 {
-		border: 2px solid gray;
-		background-color: darkgray;
-		color: white;
-		height: 180px;
-		padding: 50px;
-	}
-	.blokje {
-		display: inline-block;
-		margin:0;
-		border:1px solid darkgray;
-		background-color: gray;
-		height: 50px;
-		width: 50px;
-	}
-	.roodachtig {
-		color: red;
-		background-color: pink;
-	}
+    #header {
+        font-size: 28pt;
+        background-color: burlywood;
+        color:antiquewhite;
+        border: 1px solid rosybrown;
+        border-radius: 8px;
+        padding: 10px 8px 20px 20px;
+        margin-bottom: 20px;
+    }
+    div.standaard {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid green;
+        background-color: lightgreen;
+        text-align: center;
+        padding: 4px;
+    }
+    div.belangrijk {
+        background-color: pink;
+    }
+    input[type=button] {
+        font-size: 20;
+        padding: 4px 6px;
+        background-color: blueviolet;
+        color:aliceblue;
+    }
   </style>
   <script type="text/javascript">
-	function veranderHeader() {
-		var e = document.getElementById("header");
-		e.className += " roodachtig";
-	}
-	function addClass(e, cls) {
-//		e.className += " " + cls;
-		e.classList.add(cls);
-	}
-	function removeClass(e, cls) {
-//		e.className = e.className.replace(" " + cls, "");
-		e.classList.remove(cls);
-	}
+    function start() {
+        let e = document.getElementById('header');
+        e.innerHTML = 'Mijn vernieuwde HEADER';
+        e.style.backgroundColor = 'blue'
+        e.style.fontSize = 28;
+
+        for (let i = 1; i <= 10; i++) {
+            let newElement = document.createElement('p')
+            newElement.innerHTML = `Paragraaf ${i}`
+            newElement.style.fontSize = '20'
+            e.parentElement.append(newElement);
+        }
+
+    }
+    function clicked() {
+        var a = document.querySelectorAll('.standaard')
+        for (let e of a) {
+            e.classList.toggle('belangrijk');
+        }
+    }
   </script>
 </head>
-<body>
-	<h1 id="header">Dit is mijn header</h1>
-	<button onclick="veranderHeader()">Klik hier</button>
+<body onload = start();>
 	
-	<div class="blokje" onmouseover="addClass(this, 'roodachtig')" 
-	                    onmouseout="removeClass(this, 'roodachtig')">1</div>
-	<div class="blokje" onmouseover="addClass(this, 'roodachtig')" 
-	                    onmouseout="removeClass(this, 'roodachtig')">2</div>
-	<div class="blokje" onmouseover="addClass(this, 'roodachtig')" 
-	                    onmouseout="removeClass(this, 'roodachtig')">3</div>
-	
+    <header id="header">Dit is de header</header>
+
+    <div class="standaard">1</div>
+    <div class="standaard belangrijk">2</div>
+    <div class="standaard">3</div>
+    <div class="standaard">4</div>
+    <div class="standaard">5</div>
+    <div class="standaard">6</div>
+    <div class="standaard belangrijk">7</div>
+    <div class="standaard">8</div>
+
+    <input type="button" value="Klik hier!!" onclick="clicked()">
+
 </body>
 </html>

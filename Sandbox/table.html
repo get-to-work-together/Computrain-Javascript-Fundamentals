@@ -50,8 +50,6 @@ function buildTable(nRows, nCols) {
 }
 
 function highlight(number) {
-    console.log(number);
-    // $('td').toggleClass('highlight');
     $('table tr td:nth-child(' + number + ')').toggleClass('highlight');
 }
 function getTotal() {
@@ -59,7 +57,7 @@ function getTotal() {
     $('td.highlight').each(function() {
         total += Number($(this).text());
     });
-    $('#total').text(total);
+    $('#total').text('€ ' + total);
 }
 function clearHighlight() {
     $('td.highlight').removeClass('highlight');

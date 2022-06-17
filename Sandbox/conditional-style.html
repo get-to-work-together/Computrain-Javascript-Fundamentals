@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>Page</title>
+    <style>
+        body {
+            font-size: 16pt;
+        }
+        input[type=number],
+        input[type=text] {
+            font-size: 16pt;
+            width: 2em;
+            border: 1px sienna solid;
+            padding: 4px 6px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+function gradient(selector, low = 0, high = 10) {
+
+    $(selector).attr({'min': low.toString(), 'max': high.toString()})
+
+    function conditional() {
+        let v = $(this).val()
+        let n = parseInt(255 - (v - low) / (high - low) * 255)
+        let color = `rgb(255, ${n}, ${n})`
+        $(this).css('background-color', color)
+        console.log(color)
+    }
+
+    return conditional
+}
+
+function conditional_background_color(selector, low, high) {
+    $(selector).change(gradient(selector, low, high))
+}
+
+$(function(){
+    conditional_background_color('.target', 0, 100)
+})
+
+</script>
+</head>
+<body>
+    <label>Input</label>
+    <input class="target" type="text" value="0">
+    <input class="target" type="text" value="0">
+    <input class="target" type="text" value="0">
+    <input class="target" type="text" value="0">
+    <input class="target" type="text" value="0">
+    <input class="target" type="text" value="0">
+    <input class="target" type="text" value="0">
+</body>
+</html>

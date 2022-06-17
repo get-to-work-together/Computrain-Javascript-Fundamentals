@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<title>Page</title>
+	<script type="text/javascript">
+
+        function clicked() {
+            alert('BOOOOM!');
+        }
+        function watchout(event) {
+            event.target.value = 'WATCH OUT'
+        }
+        function start(){
+            let a = document.getElementsByTagName('input');
+            for (let e of a) {
+                e.addEventListener('click', clicked);
+                e.onmouseover = watchout
+                e.onmouseout = function(e){ e.target.value ='BOOOOM!' }
+            }
+        }
+	</script>
+</head>
+<body onload="start()">
+    <input type="button" value="BOOM">
+    <input type="button" value="BOOM">
+</body>
+</html>

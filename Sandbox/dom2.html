@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Exercise 5</title>
+  <style>
+    #header {
+        font-size: 28pt;
+        background-color: burlywood;
+        color:antiquewhite;
+        border: 1px solid rosybrown;
+        border-radius: 8px;
+        padding: 10px 8px 20px 20px;
+        margin-bottom: 20px;
+    }
+    div.standaard {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid green;
+        background-color: lightgreen;
+        text-align: center;
+        padding: 4px;
+    }
+    div.belangrijk {
+        background-color: pink;
+    }
+    input[type=button] {
+        font-size: 20;
+        padding: 4px 6px;
+        background-color: blueviolet;
+        color:aliceblue;
+    }
+  </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+    function start() {
+        let e = document.getElementById('header');
+        e.innerHTML = 'Mijn vernieuwde HEADER';
+        e.style.backgroundColor = 'green'
+        e.style.fontSize = 28;
+
+        // $('#header').html('Mijn vernieuwde HEADER')
+        //             .css({'background-color':'green','font-size':'28px'});
+
+        for (let i = 1; i <= 10; i++) {
+            let newElement = document.createElement('p')
+            newElement.innerHTML = `Paragraaf ${i}`
+            newElement.style.fontSize = '20'
+            e.parentElement.append(newElement);
+        }
+
+    }
+
+    function clicked() {
+        var a = document.querySelectorAll('.standaard')
+        for (let e of a) {
+            e.classList.toggle('belangrijk');
+        }
+
+        // $('.standaard').toggleClass('belangrijk');
+    }
+
+</script>
+</head>
+<body onload = start();>
+	
+    <header id="header">Dit is de header</header>
+
+    <div class="standaard">1</div>
+    <div class="standaard belangrijk">2</div>
+    <div class="standaard">3</div>
+    <div class="standaard">4</div>
+    <div class="standaard">5</div>
+    <div class="standaard">6</div>
+    <div class="standaard belangrijk">7</div>
+    <div class="standaard">8</div>
+
+    <input type="button" value="Klik hier!!" onclick="clicked()">
+
+</body>
+</html>

@@ -8,23 +8,30 @@
       document["title"] += "!!";
       document.bgColor = "lightgreen";
     }
+
     var course = new Object;
     course.location = "Utrecht";
     course.length = 3;
     course["topic"] = "JavaScript";
-  </script>
+
+
+</script>
 </head>
 <body onload="start()">
-  <h2>
-    Exercise 7</h2>
+  <h2>Exercise 7</h2>
   <script type="text/javascript">
-    //for (var key in document) {
-    //   document.write(key + ": " + document[key] + "<br />");
-    // }
-    for (var key in course) {
-      document.write(key + ": " + course[key] + "<br />");
+
+    for (let key in course) {
+      document.write(key + ": " + course[key] + "<br>");
     }
-  </script>
+
+    document.write('<hr>');
+
+    for (let key in document) {
+      document.write(key + ": " + document[key] + "<br>");
+    }
+
+</script>
   This is the last line of the page
 </body>
 </html>

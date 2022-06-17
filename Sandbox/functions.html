@@ -20,11 +20,45 @@
 	}
   }
   
-  function btw(prijs, btwPercentage = 0.19) {
+  function btw1(prijs, btwPercentage = 0.19) {
+	return prijs * btwPercentage;
+  }
+
+  console.log(btw1(10, 0.19))
+
+  const btw2 = function(prijs, btwPercentage = 0.19) {
 	uitkomst = prijs * btwPercentage;
 	return uitkomst;
   }
-        
+
+  console.log(btw2(10, 0.19))
+
+  const btw3 = (prijs, btwPercentage) => prijs * btwPercentage;
+
+  console.log(btw3(10, 0.19))
+
+
+
+//------------
+
+  function doe_iets(a, b, f) {
+	console.log( f(a, b) )
+  }
+
+  function telop(a, b) {
+	return a + b;
+  }
+
+  doe_iets(2, 5, telop);
+
+  doe_iets(2, 5, function(a, b) {
+	return a + b;
+  });
+
+  doe_iets(2, 5, (a, b) => a + b);
+
+
+
   </script>
 
   </head>
@@ -38,7 +72,7 @@
  printIets();
  
  for (var i = 10; i <= 100; i+=10) {
-	 document.write("BTW van " + i + " is " + btw(i) + "<br>");
+	 document.write("BTW van " + i + " is " + btw1(i) + "<br>");
  }
  
  </script>

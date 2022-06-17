@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Exercise 3</title>
+
+  <script type="text/javascript">
+
+function minmax(...getallen) {
+
+    minimum = getallen[0]
+    maximum = getallen[0]
+    for (let i = 0; i < getallen.length; i ++) {
+        getal = getallen[i]
+        if (getal < minimum) {
+            minimum = getal
+        }
+        if (getal > maximum) {
+            maximum = getal
+        }
+    }
+    return [minimum, maximum]
+
+}
+
+let resultaat = minmax(2,54,78)
+console.log('minimum: ' + resultaat[0] + ' maximum: ' + resultaat[1] )
+
+let [mn, mx] = minmax(22.111345,54.645465,78.55453)
+console.log('minimum: ' + mn + ' maximum: ' + mx )
+
+console.log( `minimum: ${Number((mn).toFixed(2))} maximum: ${mx}` )
+
+
+  </script>
+
+  </head>
+<body>
+  <h2>Function</h2>
+
+</html>

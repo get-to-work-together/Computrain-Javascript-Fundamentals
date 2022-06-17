@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Objects</title>
+  <script type="text/javascript">
+
+    var o = {
+        voornaam: 'Peter', 
+        achternaam: 'Anema', 
+        woonplaats: 'Lhee',
+        volledigeNaam: function() {
+            return `${this.voornaam} ${this.achternaam}`
+        },
+        get naam() {
+            return `${this.voornaam} ${this.achternaam}`
+        }
+    }
+    console.log(o)
+
+    console.log(o.achternaam)
+    console.log(o.voornaam)
+    console.log(o.volledigeNaam())
+    console.log(o.naam)
+
+    console.log(o['achternaam'])
+    console.log(o['voornaam'])
+
+    var o2 = new Object()
+    o2.voornaam = 'Roy'
+    console.log(o2)
+
+    for (let k in o) {
+        console.log(k)
+        console.log(o[k])
+    }
+    for (let v of Object.values(o)) {
+        console.log(v)
+    }
+    for (let e of Object.entries(o)) {
+        console.log(e)
+    }
+    for (let [k,v] of Object.entries(o)) {
+        console.log(`${k} - ${v}`)
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
