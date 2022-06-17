@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<title>Page</title>
+	<script type="text/javascript">
+        var t1;
+        var t2;
+        function clicked() {
+            alert('Je hebt 5 seconced om de timeout te ontmantelen.');
+
+            console.log('er voor')
+
+            try {
+                var n = parseInt('twee')
+            }
+            catch (err) {
+                console.log('fout afgevangen')
+            }
+
+            console.log('er na')
+
+            t1 = setTimeout(function(){
+                clearInterval(t2);
+                alert('BOOOOOOM!!');
+            }, 5 * 1000);
+
+            t2 = setInterval(function(){
+                var e = document.getElementById('tik');
+                e.innerHTML += 'tik'
+            }, 800)
+        }
+        function ontmantel() {
+            clearTimeout(t1);
+            clearInterval(t2);
+            alert('De timeout is ontmanteld.');
+        }
+
+	</script>
+</head>
+<body>
+    <input type="button" value="klik hier" onclick="clicked()">
+    <input type="button" value="klik hier" onclick="ontmantel()">
+    <span id = "tik"></span>
+</body>
+</html>

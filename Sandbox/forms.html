@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>Forms</title>
+    <style>
+        input[type=text] {
+            font-size: 14pt;
+            width: 6em;
+            border: 1px blueviolet solid;
+        }
+        input[type=submit] {
+            font-size: 14pt;
+        }
+    </style>
+	<script type="text/javascript">
+        function validatePostcode(postcode){
+            // let r = new RegExp('\d{4} ?[A-Z]{2}');
+            let r = /\d{4} ?[A-Z]{2}/;
+            return r.test(postcode)
+        }
+        function validate(event) {
+            let valid = true
+
+            let v = form1.naam.value
+            if (v.length < 6) {
+                alert('Tenminste 6 karakters!!')
+                valid = false
+            }
+
+            if (!validatePostcode(form1.postcode.value)) {
+                alert('Dat is NIET een postcode!')
+                valid = false
+            }
+
+            return valid
+        }
+
+        function start() {
+            form1.onsubmit = validate;
+            naam.onblur = validate;
+        }
+	</script>
+</head>
+<body onload = "start()">
+    <form name = "form1" action onsubmit="validate(this)">
+        <input type="text" name="naam" id="naam">
+        <input type="text" name="postcode" id="postcode">
+
+
+
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

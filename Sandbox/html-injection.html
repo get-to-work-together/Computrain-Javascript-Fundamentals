@@ -3,17 +3,20 @@
 	<title>Exercise 3</title>
 	<script type="text/javascript">
 		function start() {
-//			document.cookie = "naam=Onbekende"; 
-//			var username = getCookie("naam"); 
-//			if (!username) {
-//				username = "onbekende";
-//			}
-			var username = "Peter";
+			// document.cookie = "naam=Onbekende"; 
+			var username = getCookie("naam"); 
+			if (!username) {
+				username = "onbekende";
+			}
+			// var username = "Peter";
 			document.getElementById("naamheader").innerHTML = username;
 			myform.naam.value = username;
+
+			document.getElementById("naam").onchange = function(e){
+				setCookie('naam', e.target.value, 30)
+			}
 		}
 		
-		/*
 		function getCookie(cname) {
 			var name = cname + "=";
 			var decodedCookie = decodeURIComponent(document.cookie);
@@ -36,14 +39,13 @@
 			var expires = "expires="+ d.toUTCString();
 			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 		} 
-		*/
 	</script>  
 </head>
 <body onload="start()">
 	<h2 id="naamheader">Onbekende</h2>
 	<form name="myform">
 		<label>Wat is jouw naam? : </label>
-		<input type="text" naam="naam" />
+		<input type="text" id="naam" naam="naam" />
 	</form>
 </body>
 </html>

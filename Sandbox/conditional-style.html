@@ -21,7 +21,7 @@
 
 function gradient(selector, low = 0, high = 10) {
 
-    $(selector).attr({'min': low.toString(), 'max': high.toString()})
+    $(selector).attr({'min': low, 'max': high})
 
     function conditional() {
         let v = $(this).val()
@@ -39,19 +39,19 @@ function conditional_background_color(selector, low, high) {
 }
 
 $(function(){
-    conditional_background_color('.target', 0, 100)
+    conditional_background_color('.gradient', 0, 100)
 })
 
 </script>
 </head>
 <body>
     <label>Input</label>
-    <input class="target" type="text" value="0">
-    <input class="target" type="text" value="0">
-    <input class="target" type="text" value="0">
-    <input class="target" type="text" value="0">
-    <input class="target" type="text" value="0">
-    <input class="target" type="text" value="0">
-    <input class="target" type="text" value="0">
+    <input class="gradient" type="text" value="0">
+    <input class="gradient" type="text" value="0">
+    <input class="gradient" type="text" value="0">
+    <input class="gradient" type="text" value="0">
+    <input class="gradient" type="text" value="0">
+    <input class="gradient" type="text" value="0">
+    <input class="gradient" type="text" value="0">
 </body>
 </html>

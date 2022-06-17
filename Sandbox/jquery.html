@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery</title>
+
+    <style>
+        .opmaak {
+            background-color: green;
+            border: 2px plum solid;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+            crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+
+$(function() {
+    $('div').mouseover(function(){ this.toggleClass('opmaak') })
+})
+
+	</script>
+
+</head>
+<body>
+
+    <div class = 'standaard'>1</div>
+    <div class = 'standaard'>1</div>
+    <div class = 'standaard'>1</div>
+    <div id='x' class = 'standaard'>1</div>
+    <div class = 'standaard'>1</div>
+    <div class = 'standaard'>1</div>
+    <div class = 'standaard'>1</div>
+    <div class = 'standaard'>1</div>
+
+</body>
+</html>
